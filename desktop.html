@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jony63oficcial — ПК версия</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: black;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      margin-top: 40px;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #000;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 20px;
+      background: orange;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .link img {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+    .link:hover {
+      background: #ffb347;
+    }
+    .donate {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .donate button {
+      background: orange;
+      border: none;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .donate-box {
+      display: none;
+      margin-top: 15px;
+      font-size: 18px;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="avatar_circle.png" alt="Аватар" class="avatar" />
+    <h1>Jony63oficcial</h1>
+    <h2>Блогер</h2>
+
+    <div class="section" id="about">
+      <h2>Обо мне</h2>
+      <p style="text-align: center;">Привет! Я Jony63oficcial — блогер, создаю интересный контент, делюсь жизнью и вдохновением. Подпишись на мои соцсети!</p>
+    </div>
+
+    <div class="section" id="social">
+      <h2>Соцсети</h2>
+      <div class="links">
+        <a href="https://l.likee.video/p/aEkK6q" class="link" target="_blank">
+          <img src="likee_icon.png" alt="Likee" /> Likee
+        </a>
+        <a href="https://vk.com/jony63oficcial" class="link" target="_blank">
+          <img src="vk_icon.png" alt="VK" /> ВКонтакте
+        </a>
+        <a href="https://youtube.com/@jony63oficcial?si=C7KfqfUeMQXb0buk" class="link" target="_blank">
+          <img src="youtube_icon.png" alt="YouTube" /> YouTube
+        </a>
+      </div>
+    </div>
+
+    <div class="section" id="donate">
+      <h2>Донаты</h2>
+      <div class="donate">
+        <p>Поддержать автора</p>
+        <button onclick="showCard()">Показать номер карты</button>
+        <div class="donate-box" id="cardBox">
+          Номер карты: <strong id="cardNumber">2202 2082 6384 7783</strong><br />
+          <button onclick="copyCard()">Скопировать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showCard() {
+      document.getElementById('cardBox').style.display = 'block';
+    }
+
+    function copyCard() {
+      const card = document.getElementById("cardNumber").innerText;
+      navigator.clipboard.writeText(card).then(() => {
+        alert("Номер карты скопирован!");
+      });
+    }
+  </script>
+</body>
+</html>
